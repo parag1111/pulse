@@ -42,15 +42,14 @@ margin-left: 15px;
 #enter{
 	>div{
 		float: left;
-		display: inline;
 	}
 	display: block;
 	text-align: center;
 	width: 900px;
 	margin: 0 auto;
 	position: relative;
-	#projectList, #projectName{
-		position: absolute;
+	#projectList{
+		/*position: absolute;
 		top: -115px;
 		left: 428px;
 		height: 300px;
@@ -58,7 +57,20 @@ margin-left: 15px;
 		background: rgba(0,0,0, 0.4);
 		border-radius: $radius;
 		display: none;
-		padding: 10px;
+		padding: 10px;*/
+		position: fixed;
+		top: 133px;
+		left: 50%;
+		width: 500px;
+		height: 200px;
+		margin-left: -250px;
+		background: rgba(#FFF, 0.9);
+		z-index: 10;
+		border: 5px solid #000;
+		color: #333;
+		padding: 20px;
+		border-radius: 5px;
+		display: none;
 		.prolist{
 			border: 3px solid #000;
 			display: block;
@@ -127,4 +139,64 @@ input{
 	cursor: pointer;
 	border-radius: $radius;
 	color: #FFF;
+}
+#overlay{
+	background: rgba(#000, 0.8);
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 9;
+	display: none;
+}
+#addNewPro{
+	position: fixed;
+	top: 133px;
+	left: 50%;
+	width: 500px;
+	height: 200px;
+	margin-left: -250px;
+	background: rgba(#FFF, 0.9);
+	z-index: 10;
+	border: 5px solid #000;
+	color: #333;
+	padding: 20px;
+	border-radius: 5px;
+	display: none;
+	h3{
+		margin-top: 5px;
+	}
+	&.over{
+		border: 2px solid #FFF;
+	}
+	label{
+		padding: 5px 0px;
+		float: left;
+		width: 150px;
+	}
+	fieldset label{
+		float: left;
+		margin-right: 25px;
+	}
+	.ui-slider-switch {
+		.ui-btn{
+			&.ui-slider-handle{
+				height: 28px !important;
+			}
+		}
+	}
+	input, select{
+		background: #FFF;
+		margin-bottom: 10px;
+	}
+	.ui-slider-switch{
+		width: 8.8em;
+	}
+	input#submit{
+		background: url("../images/btn-bg.png") left top repeat-x transparent;
+		color: #FFF;
+		text-align: center;
+		margin: 0px auto;
+	}
 }
