@@ -1,0 +1,130 @@
+$full : 100% 100%;
+$baseColor : #e2dddd;
+$hoverOrange : #c52e19;
+$radius : 10px;
+$fonts : "arial";
+
+html, body{
+	min-height: 100%;
+	height: 100%;
+}
+
+body{
+margin: 0px;
+padding: 0px;
+background: $baseColor;
+background-size: $full;
+font-family: $fonts;
+}
+
+.pulseLogo{
+	background: url("../images/pulseLogo.png") left top no-repeat;
+	margin: 100px auto;
+	height: 233px;
+	width: 934px;
+	display: block;
+}
+.createProject{
+width: 423px;
+height: 82px;
+background: url("../images/btn-createProject.png") left top no-repeat;
+display: block;
+cursor: pointer;
+}
+.joinProject{
+width: 423px;
+height: 82px;
+background: url("../images/btn-joinProject.png") left top no-repeat;
+display: block;
+cursor: pointer;
+margin-left: 15px;	
+}
+#enter{
+	>div{
+		float: left;
+		display: inline;
+	}
+	display: block;
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+	position: relative;
+	#projectList, #projectName{
+		position: absolute;
+		top: -115px;
+		left: 428px;
+		height: 300px;
+		width: 423px;
+		background: rgba(0,0,0, 0.4);
+		border-radius: $radius;
+		display: none;
+		padding: 10px;
+		.prolist{
+			border: 3px solid #000;
+			display: block;
+			padding:15px;
+			color: #000;
+			cursor: pointer;
+			text-shadow:2px 2px 2px 2px #000;
+			text-align: left;
+			box-shadow: 1px 2px 1px 2px rgba(0,0,0,0.4);
+			font-family: $fonts;
+			border-radius: $radius;
+			background: $baseColor;
+			transition:all 1s;
+			-moz-transition:all 1s;
+		    -webkit-transition:all 1s;
+		    -o-transition:all 1s;
+		    transition:all 1s;
+		    &:hover{
+		    	background: $hoverOrange;
+		    	color: #FFF;
+		    }
+		}
+		&.formactive{
+			background: #FFF;
+			border: 5px solid #000;
+			padding: 80px 0px 80px 50px;
+			width: 375px;
+			height: 85px;
+			
+		}
+	}
+	#projectName{
+		left:-4px;
+		width: 410px; 
+		height: 180px; 
+		display: none;
+		#create{
+			width: 146px; 
+			height: 60px; 
+			display: inline-block;
+			background:url("../images/btn-createNewProject.png") left top no-repeat; 
+			vertical-align: top;
+			} 
+		input{			
+			display: inline-block; 
+			height: 15px;			
+		}
+	}
+}
+input{
+	border: none;
+	padding: 15px;
+	display: block;
+	font-size: 15px;
+	border: 1px solid #000;
+	border-radius: $radius;
+	min-width: 270px;
+}
+.gotoComposition{
+	background: url("../images/btn-bg.png") left top repeat-x transparent;
+	width: 300px;
+	height: 42px;
+	font-weight: bold;
+	padding-top: 15px;
+	display: block;
+	cursor: pointer;
+	border-radius: $radius;
+	color: #FFF;
+}
