@@ -1,0 +1,94 @@
+{
+  "audiodj" : {
+    "techcrunch" : {
+      "vol" : 100,
+      "audios" : [ {
+        "roomEffect" : "normal",
+        "vol" : "74",
+        "repeat" : true,
+        "editable" : true,
+        "user" : "parag",
+        "pan" : "0",
+        "name" : "Parag's beat",
+        "audio" : "toby-emerson-never-comin-down-drums.mp3",
+        "track" : [ {
+          "start" : 31500,
+          "end" : 64000
+        } ],
+        "enabled" : "enabled"
+      }, {
+        "roomEffect" : "nf",
+        "vol" : "75",
+        "repeat" : true,
+        "editable" : true,
+        "user" : "rahul",
+        "pan" : "0",
+        "name" : "Rahul's Drums",
+        "audio" : "toby-emerson-never-comin-down-guitar.mp3",
+        "track" : [ {
+          "start" : 14500,
+          "end" : 32000
+        } ],
+        "enabled" : "enabled"
+      }, {
+        "roomEffect" : "nf",
+        "vol" : "85",
+        "repeat" : false,
+        "editable" : true,
+        "user" : "sajan",
+        "pan" : "0",
+        "name" : "Sajan's base",
+        "audio" : "toby-emerson-never-comin-down-guitar-built.mp3",
+        "track" : [ {
+          "start" : 250,
+          "end" : 16000
+        } ],
+        "enabled" : "enabled"
+      }, {
+        "roomEffect" : "normal",
+        "vol" : "55",
+        "repeat" : false,
+        "editable" : true,
+        "user" : "parag",
+        "pan" : "0",
+        "name" : "Toby Legacy",
+        "audio" : "toby-emerson-never-comin-down-legacy.mp3",
+        "track" : [ {
+          "start" : 250,
+          "end" : 64000
+        } ],
+        "enabled" : "enabled"
+      }, {
+        "roomEffect" : "normal",
+        "vol" : "19",
+        "repeat" : false,
+        "user" : "sajan",
+        "pan" : "0",
+        "name" : "Toby Vocal",
+        "audio" : "toby-emerson-never-comin-down-vocal.mp3",
+        "track" : [ {
+          "start" : 2000,
+          "end" : 32000
+        } ],
+        "enabled" : "enabled"
+      } ],
+      "tempo" : "120",
+      "length" : 64000,
+      "passkey" : "#random",
+      "pan" : 50,
+      "name" : "Tech Crunch",
+      "members" : [ {
+        "user" : "parag",
+        "active" : true
+      }, {
+        "user" : "rahul",
+        "active" : true
+      }, {
+        "user" : "sajan",
+        "active" : true
+      } ],
+      "audioClips" : [ "toby-emerson-never-comin-down-drums.mp3", "toby-emerson-never-comin-down-guitar.mp3", "toby-emerson-never-comin-down-guitar-built.mp3", "toby-emerson-never-comin-down-legacy.mp3", "toby-emerson-never-comin-down-vocal.mp3", "NCD-ElectricGuitar.wav" ],
+      "lastmodified" : "parag"
+    }
+  }
+}

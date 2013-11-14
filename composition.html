@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pulse.</title>
+</head>
+<link href="assets/css/stylecomp.css" media="screen" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/jqueryMobile.css" />
+
+<body>
+	<div id="askUpdate"><p></p><div class="center"><div class="close button">Cancel</div><div class="popupUpdate button">Update</div></div></div>
+	<header>
+
+		<div class="pulseLogo"></div>
+		<div class="twoListItem">
+			<div class="proInfo">
+				<div class="left">
+					<span></span>
+					<div class="button update">Update</div>
+				</div>
+				<div class="left">
+					<div class="tempo">Set Tempo</div>
+					<input type="text" placeholder="BPM" value="120" id="tempo"/>
+				</div>
+			</div>
+
+			<div class="masterPlayer">
+				<div class="left">
+					<div class="playButton play"></div>
+				</div>
+				<div class="left">
+					<div class="logout button">Logout</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="composer">
+
+		<aside class="songlist">
+		</aside>
+		<section class="songEditor">
+			<div id="tracker"></div>
+			<div id="grid">
+			</div>
+		</section>
+	</div>
+	<div id="overlay"></div>
+	<div id="addNewSong">
+		<h3>Add New Audio</h3>
+		<label for="songname">Name</label>
+			<input id="songname" name="songname" placeholder="Name" required/>
+		
+		<label for="songpath">Audio Filename
+			<input id="songpath" name="songpath" disabled/>
+		</label>
+			<select name="repeat" size="1" id="repeat"  data-role="slider">
+			  <option value="true" selected>Repeat</option>
+			  <option value="false">No Repeat</option>
+			</select>
+		<fieldset  data-role="controlgroup" data-type="horizontal">
+			<label for="start">Start Time
+				<input id="start" name="start"  placeholder="Audio Start Time" required/>
+			</label>
+			<label for="end">End Time
+				<input id="end" name="end" placeholder="Audio End Time" required/>
+			</label>
+		</fieldset>
+		<input id="submit" name="submit" type="submit" value="Add Audio"/>
+	</div>
+
+	<section class="footerColumns">
+		<div class="column fileList">
+			<h3>MP3 Browser</h3>
+			<ul id="mp3List">
+			</ul>
+		</div>
+
+		<div class="column spectrum">
+			<h3>Spectrum</h3>
+			<canvas id="audioSpectrum"></canvas>
+		</div>
+		
+		<div class="column voiceCall">
+			<h3>Voice Chat</h3>
+		</div>
+	</section>
+
+</body>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/jqueryMobile.js"></script>
+<script type="text/javascript" src="assets/js/underscore.js"></script>
+<script type="text/javascript" src="assets/js/backbone.js"></script>
+<script type="text/javascript" src="assets/js/firebase.js"></script>
+<script type="text/javascript" src="assets/js/jquery.pep.js"></script>
+<script type="text/javascript" src="assets/js/buffer-loader.js"></script>
+
+
+<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script>
+
+<script type="text/javascript" src="assets/js/template/pulse.templates.js"></script>
+<script type="text/javascript" src="assets/js/model/pulse.model.js"></script>
+<script type="text/javascript" src="assets/js/view/pulse.view.js"></script>
+<script type="text/javascript" src="assets/js/pulse.audio.js"></script>
+<script type="text/javascript" src="assets/js/pulse.boilerplate.comp.js"></script>
+</html>
