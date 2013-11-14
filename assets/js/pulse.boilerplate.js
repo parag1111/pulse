@@ -25,12 +25,14 @@ MODULE.addHTML = (function () {
 
 			/*Create new project*/
 			createNewProject = function(){
-				var txtBox = $("#create-txt-box");
+				var nameBox = $("#proname"),
+					lengthBox = $("#prolength");
 
 				/* validation for text box */
-				if(txtBox.val().length > 0){
+				if(nameBox.val().length > 0){
 
-					var txtValue = txtBox.val(),
+					var nameValue = nameBox.val(),
+						lengthValue = lengthBox.val(),
 						projectData;
 
 					firebase.transaction(function(nitroxData){
@@ -41,12 +43,9 @@ MODULE.addHTML = (function () {
 						
 						if(projectData === null){
 
-							return {Who : "the hell deleted this"};
+							return {Who : "Oops..There are no projects"};
 
 						}else{
-							//console.log('Project: ' + txtValue + ' already exists.');
-
-
 
 							return;
 
@@ -65,15 +64,12 @@ MODULE.addHTML = (function () {
 
 						}*/else{
 
-							projectData = snapshot.val();
-							projectData.audiodj = {
-								rahul : {
-									hello : "sdfdf"
-								}
-							}
-							;
-
+							projectData = snapshot.val();							
+							projectData[nameValue.replace(" ","")] = {audioClips:{},audios:{}, lastmodified:"", length: lengthValue, members:{}, name:nameValue,pan:"50",passkey:"random#",tempo:"120",vol: 100};
 							firebase.set(projectData);
+							$("#overlay").fadeOut();
+							$("#addNewPro").fadeOut();
+							$("div.joinProject").trigger('click');
 						}
 					    
 					});
@@ -97,12 +93,21 @@ MODULE.addHTML = (function () {
 				 	event.preventDefault();
 				 	/* Act on the event */
 				 	//alert("This feature is not yet built.");
-				 	$("#projectName").fadeIn();
+				 	$("#addNewPro").fadeIn();
+				 	$("#overlay").fadeIn();
 
 				 	/* Bind create button event */
-				 	$("#projectName #create").on("click", createNewProject)
+				 	$("#addNewPro #submit").on("click", createNewProject)
 				 	
 				 });
+
+				 $("#overlay").click(function(event) {
+	                /* Act on the event */
+	                $("#addNewPro").find('input').not('#submit').val("");
+	                $("#addNewPro").fadeOut();
+	                $("#overlay").fadeOut();
+	                $("#projectList").fadeOut();
+	              });
 				
 				 $cached.joinProjectBtn.on('click', function(event) {
 				 	event.preventDefault();
@@ -120,6 +125,7 @@ MODULE.addHTML = (function () {
 	                          	HTML = '<div class="prolist">No project available</div>';
 	                          }
 
+	                          $("#overlay").fadeIn();
                               $("#projectList").mCustomScrollbar({
 										scrollButtons:{
 											enable:true
@@ -127,16 +133,15 @@ MODULE.addHTML = (function () {
 									}).fadeIn().html(HTML);
 
                               $("#projectList > div").on('click', function(event) {
-								console.log("_this");
 								/* Act on the event */
 								var _this = $(this),
 									newHTML = "";
-									console.log(_this);
 									if(_this.attr("project-ref")){
 										newHTML = '<input type="text" id="djname" placeholder="Your Name"/><div class="gotoComposition" project-ref='+_this.attr("project-ref")+'>Modify Composition</div>'
 										_this.parents("#projectList").addClass("formactive").html(newHTML);
 									}else{
 										$("#projectList").fadeOut();
+										$("#overlay").fadeOut();
 									}
 									_applyClickFeature();
 								});
